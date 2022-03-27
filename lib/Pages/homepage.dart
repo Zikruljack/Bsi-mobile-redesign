@@ -1,6 +1,7 @@
 import 'package:bsi_clone/Components/appBarWidget.dart';
 import 'package:bsi_clone/Components/bottomNavBar.dart';
 import 'package:bsi_clone/Model/listMenuModel.dart';
+import 'package:bsi_clone/Pages/info_rekening.dart';
 import 'package:bsi_clone/Pages/moreMenuPage.dart';
 import 'package:bsi_clone/const.dart';
 import 'package:bsi_clone/routes.dart';
@@ -132,7 +133,14 @@ class _HomepageState extends State<Homepage> {
       padding: const EdgeInsets.all(10),
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              FadeRoute(
+                page: const InfoRekening(),
+              ),
+            );
+          },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -315,7 +323,7 @@ class _HomepageState extends State<Homepage> {
             Navigator.push(
               context,
               FadeRoute(
-                page: MoreMenuPage(),
+                page: const MoreMenuPage(),
               ),
             );
           },

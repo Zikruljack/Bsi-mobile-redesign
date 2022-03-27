@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.light,
+        primaryColor: const Color(0xFFFFFFFF),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: secondaryColor,
           selectedItemColor: primaryColor,
@@ -25,7 +26,17 @@ class MyApp extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
         ),
       ),
-      darkTheme: ThemeData(brightness: Brightness.dark),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: secondaryColor,
+          selectedItemColor: primaryColor,
+          type: BottomNavigationBarType.fixed,
+          unselectedItemColor: Colors.white,
+          showSelectedLabels: true,
+          showUnselectedLabels: false,
+        ),
+      ),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: const Homepage(),

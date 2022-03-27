@@ -1,4 +1,6 @@
+import 'package:bsi_clone/Pages/Homepage.dart';
 import 'package:bsi_clone/const.dart';
+import 'package:bsi_clone/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -60,5 +62,31 @@ AppBar appBarWidget() {
         ),
       ),
     ],
+  );
+}
+
+AppBar appBarEveryPage(BuildContext context, String title) {
+  return AppBar(
+    elevation: 0.9,
+    centerTitle: true,
+    title: Text(
+      title,
+      style: const TextStyle(
+        color: Colors.black,
+        fontFamily: 'Lato-Regular',
+        fontSize: 20,
+      ),
+    ),
+    leading: IconButton(
+      icon: const Icon(
+        Icons.arrow_back_ios_new,
+        color: Colors.black,
+        size: 20,
+      ),
+      onPressed: () =>
+          Navigator.of(context).push(FadeRoute(page: const Homepage())),
+    ),
+    toolbarHeight: 30,
+    backgroundColor: Colors.white,
   );
 }
