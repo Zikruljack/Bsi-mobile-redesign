@@ -67,7 +67,7 @@ AppBar appBarWidget() {
 
 AppBar appBarEveryPage(BuildContext context, String title) {
   return AppBar(
-    elevation: 0.9,
+    elevation: 1,
     centerTitle: true,
     title: Text(
       title,
@@ -83,10 +83,9 @@ AppBar appBarEveryPage(BuildContext context, String title) {
         color: Colors.black,
         size: 20,
       ),
-      onPressed: () =>
-          Navigator.of(context).push(FadeRoute(page: const Homepage())),
+      onPressed: () => Navigator.pop(context),
     ),
-    toolbarHeight: 30,
+    toolbarHeight: 40,
     backgroundColor: Colors.white,
   );
 }

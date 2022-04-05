@@ -2,6 +2,7 @@
 
 import 'package:bsi_clone/Components/appBarWidget.dart';
 import 'package:bsi_clone/Components/bottomNavBar.dart';
+import 'package:bsi_clone/Components/menuCardWidget.dart';
 import 'package:bsi_clone/Pages/homepage.dart';
 import 'package:bsi_clone/const.dart';
 import 'package:bsi_clone/routes.dart';
@@ -68,69 +69,42 @@ class _MoreMenuPageState extends State<MoreMenuPage> {
   }
 
   GridView gridMoreMenuWidget() {
-    return GridView.count(
-      crossAxisSpacing: 4,
-      primary: false,
+    return GridView.extent(
+      maxCrossAxisExtent: 100,
+      crossAxisSpacing: 20,
+      primary: true,
+      mainAxisSpacing: 10,
       childAspectRatio: 0.8,
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.all(10),
-      crossAxisCount: 3,
-      children: List.generate(
-        moreMenu.length,
-        (index) => MoreCard(
-          moreMenu: moreMenu[index],
+      children: const [
+        MenuCardWidget(
+          page: MoreMenuPage(),
+          title: 'E-Mas',
+          icon: FontAwesomeIcons.bars,
         ),
-      ),
-    );
-  }
-}
-
-class MoreMenu {
-  const MoreMenu({required this.title, required this.icon});
-  final String title;
-  final IconData icon;
-}
-
-const List<MoreMenu> moreMenu = [
-  MoreMenu(title: 'E-Mas', icon: FontAwesomeIcons.bars),
-  MoreMenu(title: 'Tarik Tunai', icon: FontAwesomeIcons.fileInvoiceDollar),
-  MoreMenu(title: 'Buka Rekening', icon: FontAwesomeIcons.creditCard),
-  MoreMenu(title: 'Transaksi Terjadwal', icon: FontAwesomeIcons.calendarCheck),
-  MoreMenu(title: 'Keyboard', icon: FontAwesomeIcons.keyboard),
-];
-
-class MoreCard extends StatelessWidget {
-  const MoreCard({Key? key, required this.moreMenu}) : super(key: key);
-  final MoreMenu moreMenu;
-
-  @override
-  Widget build(BuildContext context) {
-    final TextStyle? textStyle = Theme.of(context).textTheme.caption;
-    return GestureDetector(
-      onTap: () {},
-      child: Column(
-        children: [
-          Container(
-            width: 64,
-            height: 64,
-            decoration: BoxDecoration(
-              // border: Border.all(width: 2, color: primaryColor),
-              color: greyBackgroundColor,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Icon(
-              moreMenu.icon,
-              color: primaryColor,
-            ),
-          ),
-          Text(
-            moreMenu.title,
-            style: textStyle,
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
+        MenuCardWidget(
+          page: MoreMenuPage(),
+          title: 'E-Mas',
+          icon: FontAwesomeIcons.fileInvoiceDollar,
+        ),
+        MenuCardWidget(
+          page: MoreMenuPage(),
+          title: 'E-Mas',
+          icon: FontAwesomeIcons.creditCard,
+        ),
+        MenuCardWidget(
+          page: MoreMenuPage(),
+          title: 'E-Mas',
+          icon: FontAwesomeIcons.calendarCheck,
+        ),
+        MenuCardWidget(
+          page: MoreMenuPage(),
+          title: 'E-Mas',
+          icon: FontAwesomeIcons.keyboard,
+        ),
+      ],
     );
   }
 }

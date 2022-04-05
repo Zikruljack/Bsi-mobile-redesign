@@ -1,5 +1,8 @@
 import 'package:bsi_clone/Components/appBarWidget.dart';
 import 'package:bsi_clone/Components/bottomNavBar.dart';
+import 'package:bsi_clone/Components/menuCardWidget.dart';
+import 'package:bsi_clone/Pages/informasi_saldo.dart';
+import 'package:bsi_clone/Pages/moreMenuPage.dart';
 import 'package:bsi_clone/const.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -29,115 +32,31 @@ class InfoRekening extends StatelessWidget {
       crossAxisSpacing: 20,
       primary: true,
       mainAxisSpacing: 10,
-      childAspectRatio: 0.8,
+      childAspectRatio: 0.5,
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.all(10),
       children: [
-        GestureDetector(
-          onTap: () {},
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  // border: Border.all(width: 2, color: primaryColor),
-                  color: greyBackgroundColor,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Icon(
-                  FontAwesomeIcons.moneyCheck,
-                  color: primaryColor,
-                ),
-              ),
-              const Text(
-                'Rekening',
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-        GestureDetector(
-          onTap: () {},
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  // border: Border.all(width: 2, color: primaryColor),
-                  color: greyBackgroundColor,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Icon(
-                  FontAwesomeIcons.moneyCheck,
-                  color: primaryColor,
-                ),
-              ),
-              const Text(
-                'Rekening',
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-        GestureDetector(
-          onTap: () {},
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  // border: Border.all(width: 2, color: primaryColor),
-                  color: greyBackgroundColor,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Icon(
-                  FontAwesomeIcons.moneyCheck,
-                  color: primaryColor,
-                ),
-              ),
-              const Text(
-                'Rekening',
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-        GestureDetector(
-          onTap: () {},
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  // border: Border.all(width: 2, color: primaryColor),
-                  color: greyBackgroundColor,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: const Icon(
-                  FontAwesomeIcons.moneyCheck,
-                  color: primaryColor,
-                ),
-              ),
-              const Text(
-                'Rekening',
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
+        MenuCardWidget(
+            page: InformasiSaldo(),
+            title: 'Informasi Saldo',
+            icon: FontAwesomeIcons.accessibleIcon),
+        MenuCardWidget(
+            page: MoreMenuPage(),
+            title: 'Daftar Mutasi',
+            icon: FontAwesomeIcons.accessibleIcon),
+        MenuCardWidget(
+            page: MoreMenuPage(),
+            title: 'Informasi Portofolio',
+            icon: FontAwesomeIcons.accessibleIcon),
+        MenuCardWidget(
+            page: MoreMenuPage(),
+            title: 'Daftar Transaksi Terjadwal',
+            icon: FontAwesomeIcons.accessibleIcon),
+        MenuCardWidget(
+            page: MoreMenuPage(),
+            title: 'Registrasi Notifikasi',
+            icon: FontAwesomeIcons.accessibleIcon),
       ],
     );
   }

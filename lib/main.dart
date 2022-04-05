@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.light,
-        primaryColor: const Color(0xFFFFFFFF),
+        primaryColor: const Color(0xFFCBCBCB),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: secondaryColor,
           selectedItemColor: primaryColor,
